@@ -1,0 +1,22 @@
+--  Copyright (c) 2020 Maxim Reznik <reznikmm@gmail.com>
+--
+--  SPDX-License-Identifier: MIT
+--  License-Filename: LICENSE
+-------------------------------------------------------------
+
+with "matreshka_league.gpr";
+with "aws.gpr";
+with "ada_fuse.gpr";
+
+project Mount_Photos is
+
+   for Source_Dirs use ("src");
+   for Object_Dir use "obj";
+   for Main use ("main.adb");
+
+   package Compiler is
+      for Switches ("ada") use ("-gnatW8", "-gnatwae", "-gnatyyo");
+   end Compiler;
+
+end Mount_Photos;
+
